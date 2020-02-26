@@ -74,6 +74,18 @@ public class RangeCombineTest {
 		assertEquals("Expected range is (-5.0, 0.0)", expected, Range.combine(negRange1, negToZeroRange));
 	}
 	
+	@Test
+	public void combinedRangWithFirstNull() {
+		Range expected = new Range(1.0, 5.0);
+		assertEquals("Expected range is (1.0, 5.0)", expected, Range.combine(null, posRange1));
+	}
+	
+	@Test
+	public void combinedRangWithSecondNull() {
+		Range expected = new Range(1.0, 5.0);
+		assertEquals("Expected range is (1.0, 5.0)", expected, Range.combine(posRange1, null));
+	}
+	
 	
 	/**
 	 * @throws java.lang.Exception
