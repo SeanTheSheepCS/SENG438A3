@@ -192,7 +192,19 @@ public class DataUtilitiesGetCumulativePercentagesTest {
 		
 	}
 	
-	
+	@Test
+	public void NullCumilativePercentageTest() {
+		
+		try {
+			KeyedValues input = null;
+			DataUtilities.getCumulativePercentages(input);	
+			
+		}
+		catch(Exception err) {
+			assertEquals("The method is calling the getCumulativePercentage on a null value, so it should throw an exception",  IllegalArgumentException.class, err.getClass());
+		}
+		
+	}
 	
 	@After
 	public void tearDown() throws Exception {
