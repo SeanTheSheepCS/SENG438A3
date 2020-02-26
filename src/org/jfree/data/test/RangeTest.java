@@ -26,7 +26,6 @@ public void centralValueShouldBeZero() {
 @Test
 public void flippedLowerUpperRangeCreationTest() {
 	try {
-
 		Range newRange = new Range(9, 6);
 	}
 	catch(Exception e) {
@@ -34,6 +33,12 @@ public void flippedLowerUpperRangeCreationTest() {
 	}
 }
 
+@Test
+public void hashCodeRangeTest() {
+	Range newRange = new Range(6, 9);
+	assertNotNull(newRange.hashCode());
+
+}
 
 @After
 public void tearDown() throws Exception {
