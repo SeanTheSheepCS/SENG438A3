@@ -40,6 +40,13 @@ public void hashCodeRangeTest() {
 
 }
 
+@Test
+public void constrainRangeTest() {
+	Range newRange = new Range(3,6);
+	double x = newRange.constrain(0);
+	assertTrue(0==x);
+}
+
 @After
 public void tearDown() throws Exception {
 }
