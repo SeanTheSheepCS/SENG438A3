@@ -43,8 +43,9 @@ public void hashCodeRangeTest() {
 @Test
 public void constrainRangeTest() {
 	Range newRange = new Range(3,6);
-	double x = newRange.constrain(0);
-	assertTrue(0==x);
+	double expected = 3;
+	double actual = newRange.constrain(0);
+	assertEquals(expected, actual, 0);
 }
 
 @After

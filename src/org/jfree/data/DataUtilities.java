@@ -45,6 +45,8 @@
 
 package org.jfree.data;
 
+import java.security.InvalidParameterException;
+
 import org.jfree.data.general.DatasetUtilities;
 
 /**
@@ -85,6 +87,11 @@ public abstract class DataUtilities {
      */
     public static double calculateRowTotal(Values2D data, int row) {
         double total = 0.0;
+        if (data == null) {
+    		throw new InvalidParameterException(
+    			String.format(
+    			"Invalid Parameter Thrown"));
+    	}
         int columnCount = data.getColumnCount();
         for (int c = 0; c < columnCount; c++) {
             Number n = data.getValue(row, c);
